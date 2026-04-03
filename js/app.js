@@ -63,15 +63,7 @@ function filterProjects(category, btn) {
  * @param {Element} btn - bouton d'envoi
  */
 function handleSend(btn) {
-  btn.textContent = '✓ Message envoyé !';
-  btn.style.background = 'linear-gradient(135deg, #34d399, #6ee7b7)';
-  btn.disabled = true;
-
-  setTimeout(() => {
-    btn.textContent = 'Envoyer le message →';
-    btn.style.background = '';
-    btn.disabled = false;
-  }, 3000);
+  // Fonction désactivée : le formulaire est maintenant géré par Formspree
 }
 
 /* ─────────────────────────────────────────────
