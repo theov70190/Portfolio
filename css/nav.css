@@ -1,0 +1,193 @@
+/* ─────────────────────────────────────────────
+   nav.css — Sidebar, navigation, menu mobile
+   ───────────────────────────────────────────── */
+
+/* ── SIDEBAR ── */
+#sidebar {
+  width: var(--nav-w);
+  min-width: var(--nav-w);
+  height: 100vh;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  z-index: 200;
+  transition: transform var(--transition);
+  overflow: hidden;
+}
+
+/* ── LOGO ── */
+.sidebar-logo {
+  padding: 0 1.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+.sidebar-logo-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #090910;
+  margin-bottom: 0.75rem;
+}
+.sidebar-logo-name {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+.sidebar-logo-title {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* ── SECTION LABEL ── */
+.nav-section-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--subtle);
+  padding: 0 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ── LIENS DE NAV ── */
+.nav-links {
+  list-style: none;
+  padding: 0 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--muted);
+  transition: all 0.18s;
+  user-select: none;
+  border: 1px solid transparent;
+  margin-bottom: 2px;
+}
+.nav-link:hover {
+  color: var(--text);
+  background: var(--bg3);
+}
+.nav-link.active {
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-color: rgba(110, 231, 183, 0.15);
+  font-weight: 500;
+}
+
+.nav-link-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+.nav-link.active .nav-link-icon {
+  opacity: 1;
+}
+
+/* ── BOTTOM SIDEBAR ── */
+.sidebar-bottom {
+  margin-top: auto;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── BADGE DISPONIBILITÉ ── */
+.availability-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(110, 231, 183, 0.08);
+  border: 1px solid rgba(110, 231, 183, 0.18);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.8rem;
+}
+.availability-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+.availability-text {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ── BOUTON MENU MOBILE ── */
+#menu-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 300;
+  width: 40px;
+  height: 40px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+#menu-toggle span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+/* ── OVERLAY MOBILE ── */
+#sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+/* ── RESPONSIVE MOBILE ── */
+@media (max-width: 768px) {
+  #sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    height: 100%;
+  }
+  #sidebar.open { transform: translateX(0); }
+  #sidebar-overlay.open { display: block; }
+  #menu-toggle { display: flex; }
+}

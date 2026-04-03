@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Théo Valadoux — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+
+  <!-- Bouton menu mobile -->
+  <button id="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Overlay mobile -->
+  <div id="sidebar-overlay" onclick="toggleMenu()"></div>
+
+  <div id="app">
+
+    <!-- ─── SIDEBAR ─── -->
+    <aside id="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-mark">TV</div>
+        <div class="sidebar-logo-name">Théo Valadoux</div>
+        <div class="sidebar-logo-title">Dev Web · Sécurité · BTS SIO</div>
+      </div>
+
+      <p class="nav-section-label">Navigation</p>
+      <ul class="nav-links">
+        <li class="nav-link active" data-page="home" onclick="navigate('home', this)">
+          <span class="nav-link-icon">⌂</span> Accueil
+        </li>
+        <li class="nav-link" data-page="parcours" onclick="navigate('parcours', this)">
+          <span class="nav-link-icon">◎</span> Parcours
+        </li>
+        <li class="nav-link" data-page="competences" onclick="navigate('competences', this)">
+          <span class="nav-link-icon">◈</span> Compétences
+        </li>
+        <li class="nav-link" data-page="projets" onclick="navigate('projets', this)">
+          <span class="nav-link-icon">◻</span> Projets
+        </li>
+        <li class="nav-link" data-page="bts" onclick="navigate('bts', this)">
+          <span class="nav-link-icon">◑</span> BTS SIO
+        </li>
+        <li class="nav-link" data-page="contact" onclick="navigate('contact', this)">
+          <span class="nav-link-icon">✉</span> Contact
+        </li>
+      </ul>
+
+      <div class="sidebar-bottom">
+        <!-- Badge disponibilité supprimé -->
+      </div>
+    </aside>
+
+    <!-- ─── CONTENU PRINCIPAL ─── -->
+    <main id="content">
+
+      <!-- PAGE : ACCUEIL -->
+      <div class="page active" id="page-home">
+        <div class="hero-page">
+          <div class="hero-grid-bg"></div>
+          <div class="hero-glow"></div>
+          <div class="hero-inner">
+            <div class="hero-kicker">Portfolio 2026</div>
+            <h1 class="hero-name">Théo<br />Valadoux</h1>
+            <h2 class="hero-role">Dev Web &amp; Sécurité</h2>
+            <p class="hero-bio">
+              Développeur passionné par la création web et le pentesting, formé
+              en BTS SIO et BUT Réseaux &amp; Télécommunications. Je construis
+              des applications modernes et des solutions sécurisées.
+            </p>
+            <div class="hero-actions">
+              <button
+                class="btn btn-primary"
+                onclick="navigate('projets', document.querySelector('[data-page=projets]'))"
+              >
+                Voir mes projets →
+              </button>
+              <button
+                class="btn btn-secondary"
+                onclick="navigate('contact', document.querySelector('[data-page=contact]'))"
+              >
+                Me contacter
+              </button>
+            </div>
+            <div class="hero-divider"></div>
+            <div class="hero-stats">
+              <div class="stat-card">
+                <span class="stat-num">3+</span>
+                <span class="stat-label">Années de formation</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num">10+</span>
+                <span class="stat-label">Ans de handball</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num">5+</span>
+                <span class="stat-label">Projets réalisés</span>
+              </div>
+            </div>
+            <div class="hero-pills">
+              <span class="hero-pill">🏐 Handball</span>
+              <span class="hero-pill">🐍 Python</span>
+              <span class="hero-pill">🌐 HTML/CSS/JS</span>
+              <span class="hero-pill">🛡️ Pentesting</span>
+              <span class="hero-pill">🔗 Réseaux</span>
+              <span class="hero-pill">📋 BTS SIO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE : PARCOURS -->
+      <div class="page" id="page-parcours">
+        <div class="page-header">
+          <div class="page-header-bg"></div>
+          <p class="page-label">Parcours</p>
+          <h1 class="page-title">Expériences &amp; <span>Formation</span></h1>
+          <p class="page-desc">
+            Un parcours pluridisciplinaire entre réseaux, développement et
+            sécurité informatique.
+          </p>
+        </div>
+        <div class="page-body">
+          <div class="parcours-grid">
+
+            <!-- Expérience pro -->
+            <div>
+              <p class="col-label col-label--green">Expérience professionnelle</p>
+              <div class="timeline">
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-period">Sept. 2024 – Sept. 2026</div>
+                  <div class="tl-role">Alternant BTS SIO</div>
+                  <div class="tl-org">ARRIVE (anciennement FLOWBIRD) · Besançon</div>
+                  <div class="tl-desc">
+                    Formation en BTS SIO (Services Informatiques aux Organisations) sur 2 ans, en alternance chez ARRIVE. Missions en développement logiciel, gestion de projets informatiques et sécurité, avec une immersion dans l'évolution de l'entreprise.
+                  </div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-period">Sept. 2023 – Sept. 2024</div>
+                  <div class="tl-role">Alternant BUT RT</div>
+                  <div class="tl-org">Flowbird · Besançon</div>
+                  <div class="tl-desc">
+                    Développement logiciel et réseaux en alternance dans une
+                    entreprise spécialisée dans les solutions de stationnement
+                    et mobilité.
+                  </div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-period">Juillet 2023</div>
+                  <div class="tl-role">Employé polyvalent de caisse</div>
+                  <div class="tl-org">Leroy Merlin</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-period">Juillet 2022</div>
+                  <div class="tl-role">Employé polyvalent de restauration</div>
+                  <div class="tl-org">CDD saisonnier</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-period">Juillet 2021</div>
+                  <div class="tl-role">Employé polyvalent de restauration</div>
+                  <div class="tl-org">Restaurant L'Escapade · Besançon</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-period">Février 2020</div>
+                  <div class="tl-role">Stage découverte 3ème</div>
+                  <div class="tl-org">FEMTO Mécanique Appliquée · Besançon</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-period">Décembre 2019</div>
+                  <div class="tl-role">Stage découverte 3ème</div>
+                  <div class="tl-org">Start-up Panarobotics · Besançon</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formation -->
+            <div>
+              <p class="col-label col-label--purple">Formation scolaire</p>
+              <div class="timeline">
+                <div class="tl-item">
+                  <div class="tl-dot tl-dot--purple"></div>
+                  <div class="tl-period tl-period--purple">2023 – 2024 (en cours)</div>
+                  <div class="tl-role">BTS SIO · Service Informatique aux Organisations</div>
+                  <div class="tl-org">Option SLAM / SISR</div>
+                  <div class="tl-desc">
+                    Formation préparée en parallèle, orientée développement
+                    et gestion des systèmes d'information.
+                  </div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot tl-dot--purple"></div>
+                  <div class="tl-period tl-period--purple">Sept. 2023 – Juil. 2024</div>
+                  <div class="tl-role">BUT Réseaux &amp; Télécommunications (1ère année)</div>
+                  <div class="tl-org">Alternance chez Flowbird</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot tl-dot--purple"></div>
+                  <div class="tl-period tl-period--purple">2022 – 2023</div>
+                  <div class="tl-role">Terminale Générale</div>
+                  <div class="tl-org">Spécialités Maths + NSI · Lycée E. Belin, Vesoul</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot tl-dot--purple"></div>
+                  <div class="tl-period tl-period--purple">2021 – 2022</div>
+                  <div class="tl-role">Première Générale</div>
+                  <div class="tl-org">Spécialités Maths + NSI + SI · Lycée E. Belin, Vesoul</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot tl-dot--purple"></div>
+                  <div class="tl-period tl-period--purple">2019 – 2020</div>
+                  <div class="tl-role">Brevet des collèges</div>
+                  <div class="tl-org">Diplôme obtenu</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Passions -->
+          <!-- Section Passions supprimée -->
+        </div>
+      </div>
+
+      <!-- PAGE : COMPÉTENCES -->
+      <div class="page" id="page-competences">
+        <div class="page-header">
+          <div class="page-header-bg"></div>
+          <p class="page-label">Compétences</p>
+          <h1 class="page-title">Ce que je <span>maîtrise</span></h1>
+          <p class="page-desc">Des compétences techniques et humaines acquises en formation et en entreprise.</p>
+        </div>
+        <div class="page-body">
+
+          <!-- Barres de compétences -->
+          <div class="skills-bars-grid">
+            <div>
+              <p class="col-label col-label--green">Développement</p>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">HTML / CSS</span>
+                  <span class="skill-pct">70%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-width="70"></div>
+                </div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-pct">30%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-width="30"></div>
+                </div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-pct">75%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-width="75"></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="col-label col-label--purple">Sécurité &amp; Réseaux</p>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Pentesting</span>
+                  <span class="skill-pct">50%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-width="50"></div>
+                </div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Réseaux TCP/IP</span>
+                  <span class="skill-pct">50%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-width="50"></div>
+                </div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Rapports de sécurité</span>
+                  <span class="skill-pct">60%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-width="60"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards compétences -->
+          <div class="skills-cards-grid">
+            <div class="card">
+              <div class="card-icon card-icon--green">🌐</div>
+              <h3 class="card-title">Développement Web</h3>
+              <p class="card-desc">Création d'applications et pages web modernes, du front-end à la logique applicative.</p>
+              <div class="badge-row">
+                <span class="badge badge-green">HTML</span>
+                <span class="badge badge-green">CSS</span>
+                <span class="badge badge-green">JavaScript</span>
+                <span class="badge badge-green">Python</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon card-icon--red">🛡️</div>
+              <h3 class="card-title">Cybersécurité</h3>
+              <p class="card-desc">Tests d'intrusion automatisés, analyse de vulnérabilités et rédaction de cahiers de tests.</p>
+              <div class="badge-row">
+                <span class="badge badge-red">ZAP Proxy</span>
+                <span class="badge badge-red">Requests</span>
+                <span class="badge badge-red">Pentest</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon card-icon--purple">🔗</div>
+              <h3 class="card-title">Réseaux</h3>
+              <p class="card-desc">Bases solides en réseaux informatiques acquises lors de ma 1ère année de BUT RT.</p>
+              <div class="badge-row">
+                <span class="badge badge-purple">TCP/IP</span>
+                <span class="badge badge-purple">LAN/WAN</span>
+                <span class="badge badge-purple">BUT RT</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon card-icon--amber">🤝</div>
+              <h3 class="card-title">Soft skills</h3>
+              <p class="card-desc">10+ ans de handball en club : esprit d'équipe, écoute active, communication.</p>
+              <div class="badge-row">
+                <span class="badge badge-amber">Travail d'équipe</span>
+                <span class="badge badge-amber">Communication</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Outils -->
+          <div class="tools-block">
+            <p class="col-label col-label--muted">Outils &amp; Environnements</p>
+            <div class="tools-list">
+              <span class="tool-tag">VS Code</span>
+              <span class="tool-tag">Git / GitHub</span>
+              <span class="tool-tag">ZAP Proxy</span>
+              <span class="tool-tag">Linux</span>
+              <span class="tool-tag">WordPress</span>
+              <span class="tool-tag">Python Requests</span>
+              <span class="tool-tag">Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE : PROJETS -->
+      <div class="page" id="page-projets">
+        <div class="page-header">
+          <div class="page-header-bg"></div>
+          <p class="page-label">Projets</p>
+          <h1 class="page-title">Mes <span>Réalisations</span></h1>
+          <p class="page-desc">Projets réalisés en entreprise, en formation et mes prochains objectifs.</p>
+        </div>
+        <div class="page-body">
+
+          <!-- Filtres -->
+          <div class="filter-bar" id="filter-btns">
+            <button class="filter-btn filter-btn--active" onclick="filterProjects('all', this)">Tous</button>
+            <button class="filter-btn" onclick="filterProjects('enterprise', this)">Entreprise</button>
+            <button class="filter-btn" onclick="filterProjects('school', this)">Formation</button>
+            <button class="filter-btn" onclick="filterProjects('future', this)">À venir</button>
+          </div>
+
+          <!-- Grille projets -->
+          <div class="projects-grid" id="projects-grid">
+
+            <div class="proj-card" data-category="school">
+              <span class="badge badge-green">BTS SIO · 2025–2026</span>
+              <h3 class="proj-title">Projet Élan</h3>
+              <p class="proj-desc">
+                Application web développée en Laravel et React. Projet réalisé en équipe dans le cadre de la formation BTS SIO. (Description à compléter)
+              </p>
+              <div class="proj-techs">
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Web App</span>
+              </div>
+            </div>
+
+            <div class="proj-card" data-category="enterprise">
+              <span class="badge badge-purple">Entreprise · ARRIVE</span>
+              <h3 class="proj-title">Migration SVN vers GitHub</h3>
+              <p class="proj-desc">
+                Migration complète d’un dépôt de code source de SVN vers GitHub, avec gestion de l’historique et adaptation des workflows pour l’équipe.
+              </p>
+              <div class="proj-techs">
+                <span class="tech-tag">SVN</span>
+                <span class="tech-tag">GitHub</span>
+                <span class="tech-tag">Gestion de version</span>
+              </div>
+            </div>
+
+            <div class="proj-card" data-category="school">
+              <span class="badge badge-green">Projet à compléter</span>
+              <h3 class="proj-title">Titre du projet</h3>
+              <p class="proj-desc">Description à compléter.</p>
+              <div class="proj-techs">
+                <span class="tech-tag">Techno</span>
+              </div>
+            </div>
+
+            <div class="proj-card" data-category="school">
+              <span class="badge badge-green">Projet à compléter</span>
+              <h3 class="proj-title">Titre du projet</h3>
+              <p class="proj-desc">Description à compléter.</p>
+              <div class="proj-techs">
+                <span class="tech-tag">Techno</span>
+              </div>
+            </div>
+            <div class="proj-card" data-category="enterprise">
+              <span class="badge badge-purple">Entreprise · Flowbird</span>
+              <h3 class="proj-title">Suite de 32 tests automatisés</h3>
+              <p class="proj-desc">
+                Programme Python réalisant 32 tests automatisés sur une
+                application interne pour détecter les failles de sécurité.
+                Cahier de tests rédigé en sortie.
+              </p>
+              <div class="proj-techs">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Requests</span>
+                <span class="tech-tag">ZAP Proxy</span>
+                <span class="tech-tag">Pentest</span>
+              </div>
+            </div>
+
+            <div class="proj-card" data-category="school">
+              <span class="badge badge-green">BUT RT · 2023–2024</span>
+              <h3 class="proj-title">Site web &amp; Voiture RC connectée</h3>
+              <p class="proj-desc">
+                Site web de contrôle et voiture télécommandée pilotable via
+                smartphone, réalisé en 1ère année de BUT RT.
+              </p>
+              <div class="proj-techs">
+                <span class="tech-tag">HTML/CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">IoT</span>
+                <span class="tech-tag">Mobile</span>
+              </div>
+            </div>
+
+            <div class="proj-card" data-category="school">
+              <span class="badge badge-green">Lycée · NSI</span>
+              <h3 class="proj-title">Site web HTML/CSS from scratch</h3>
+              <p class="proj-desc">
+                Site web complet en HTML et CSS pur, sans framework, avec
+                formulaire de contact. Projet scolaire NSI.
+              </p>
+              <div class="proj-techs">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+              </div>
+            </div>
+
+            <div class="proj-card" data-category="school">
+              <span class="badge badge-green">BUT RT · 2023–2024</span>
+              <h3 class="proj-title">Projets infrastructure BUT RT</h3>
+              <p class="proj-desc">
+                Configuration réseau, développement d'applications et travaux
+                pratiques en infrastructure lors de la 1ère année de BUT RT.
+              </p>
+              <div class="proj-techs">
+                <span class="tech-tag">Réseaux</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Linux</span>
+              </div>
+            </div>
+
+            <div class="proj-card" data-category="future">
+              <span class="badge badge-amber">Projet futur</span>
+              <h3 class="proj-title">Application de vente de services</h3>
+              <p class="proj-desc">
+                Plateforme de mise en relation pour la vente de services,
+                avec interface intuitive et système de messagerie.
+              </p>
+              <div class="proj-techs">
+                <span class="tech-tag">En développement</span>
+                <span class="tech-tag">Web App</span>
+              </div>
+            </div>
+
+            <div class="proj-card" data-category="future">
+              <span class="badge badge-amber">Projet futur</span>
+              <h3 class="proj-title">App d'inventaire immobilier</h3>
+              <p class="proj-desc">
+                Application pour la gestion de biens immobiliers : fiches
+                biens, états des lieux et suivi. Développée pour un proche.
+              </p>
+              <div class="proj-techs">
+                <span class="tech-tag">En développement</span>
+                <span class="tech-tag">Base de données</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE : BTS SIO -->
+      <div class="page" id="page-bts">
+        <div class="page-header page-header--purple">
+          <div class="page-header-bg"></div>
+          <p class="page-label page-label--purple">BTS SIO</p>
+          <h1 class="page-title">Service Informatique<br />aux <span>Organisations</span></h1>
+          <p class="page-desc">Documents, épreuves et ressources liés à ma formation BTS SIO.</p>
+        </div>
+        <div class="page-body">
+
+          <!-- Info BTS -->
+          <!-- Bloc d'info BTS SIO supprimé -->
+
+          <!-- Documents -->
+          <p class="col-label col-label--muted" style="margin-bottom: 1.25rem;">Documents &amp; Épreuves</p>
+          <div class="doc-grid">
+            <div class="doc-card">
+              <div class="doc-icon">📄</div>
+              <div class="doc-title">E4 — Support et mise à disposition de services informatiques</div>
+              <div class="doc-meta">Épreuve pratique · BTS SIO</div>
+            </div>
+            <div class="doc-card">
+              <div class="doc-icon">📊</div>
+              <div class="doc-title">E5 — Administration des systèmes et des réseaux</div>
+              <div class="doc-meta">Épreuve orale · BTS SIO</div>
+            </div>
+            <div class="doc-card">
+              <a href="assets/docs/portefeuille-competences.pdf" target="_blank">
+                <div class="doc-icon">🗂️</div>
+                <div class="doc-title">Portfolio de compétences</div>
+                <div class="doc-meta">Document de synthèse · BTS SIO (PDF)</div>
+              </a>
+            </div>
+            <div class="doc-card">
+              <div class="doc-icon">🔍</div>
+              <div class="doc-title">Rapport de stage</div>
+              <div class="doc-meta">Flowbird · 2023–2024</div>
+            </div>
+            <div class="doc-card">
+              <div class="doc-icon">📝</div>
+              <div class="doc-title">Fiches de situations professionnelles</div>
+              <div class="doc-meta">Situations en entreprise</div>
+            </div>
+            
+            <div class="doc-card">
+              <div class="doc-icon">🛡️</div>
+              <div class="doc-title">Rapport de tests de sécurité</div>
+              <div class="doc-meta">Projet pentesting · Flowbird</div>
+            </div>
+          </div>
+
+          <!-- Blocs de compétences -->
+          <p class="col-label col-label--muted" style="margin: 2.5rem 0 1.25rem;">Blocs de compétences couverts</p>
+          <div class="bts-blocs">
+            <div class="bts-bloc-item">
+              <span class="badge badge-purple">B1</span>
+              <span>Support et mise à disposition de services informatiques</span>
+            </div>
+            <div class="bts-bloc-item">
+              <span class="badge badge-purple">B2</span>
+              <span>Conception et développement d'applications</span>
+            </div>
+            <div class="bts-bloc-item">
+              <span class="badge badge-purple">B3</span>
+              <span>Cybersécurité des services informatiques</span>
+            </div>
+          </div>
+
+          <!-- CTA contact -->
+          <div class="bts-cta">
+            <span>📂</span>
+            <div>
+              <div class="bts-cta-title">Documents disponibles sur demande</div>
+              <div class="bts-cta-desc">Contactez-moi pour accéder aux documents complets de ma formation BTS SIO.</div>
+            </div>
+            <button
+              class="btn btn-secondary"
+              onclick="navigate('contact', document.querySelector('[data-page=contact]'))"
+            >
+              Contacter →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE : CONTACT -->
+      <div class="page" id="page-contact">
+        <div class="page-header">
+          <div class="page-header-bg"></div>
+          <p class="page-label">Contact</p>
+          <h1 class="page-title">Travaillons <span>ensemble</span></h1>
+          <p class="page-desc">N'hésitez pas à me contacter pour vos projets, missions ou opportunités professionnelles.</p>
+        </div>
+        <div class="page-body">
+          <div class="contact-layout">
+
+            <!-- Infos -->
+            <div class="contact-info">
+              <p class="col-label col-label--muted" style="margin-bottom: 1.25rem;">Mes coordonnées</p>
+              <a href="#" class="contact-item">
+                <div class="ci-icon ci-icon--purple">in</div>
+                <div>
+                  <div class="ci-label">LinkedIn</div>
+                  <div class="ci-value">Théo Valadoux</div>
+                </div>
+              </a>
+              <a href="#" class="contact-item">
+                <div class="ci-icon ci-icon--default">&lt;/&gt;</div>
+                <div>
+                  <div class="ci-label">GitHub</div>
+                  <div class="ci-value">theovaladoux</div>
+                </div>
+              </a>
+
+              <div class="contact-funfact">
+                <div class="contact-funfact-label">🏐 FUN FACT</div>
+                <p class="contact-funfact-text">
+                  Pratiquant de handball depuis plus de 10 ans en club —
+                  l'esprit d'équipe et la rigueur font partie de mon ADN.
+                </p>
+              </div>
+            </div>
+
+            <!-- Formulaire -->
+            <div class="contact-form-col">
+              <p class="col-label col-label--muted" style="margin-bottom: 1.25rem;">Envoyer un message</p>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Prénom</label>
+                  <input type="text" class="form-input" placeholder="Jean" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Nom</label>
+                  <input type="text" class="form-input" placeholder="Dupont" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" placeholder="jean.dupont@exemple.com" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Sujet</label>
+                <input type="text" class="form-input" placeholder="Proposition de projet / Alternance..." />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Message</label>
+                <textarea class="form-textarea" placeholder="Bonjour Théo, je souhaite vous contacter pour..."></textarea>
+              </div>
+              <button class="btn btn-primary btn-full" id="send-btn" onclick="handleSend(this)">
+                Envoyer le message →
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
